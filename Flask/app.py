@@ -61,8 +61,8 @@ def stream1():
 def conn():              
   
     try:
-        os.system("snapctl stop simple-openvpn-client-ui.vpn-daemon")
-        os.system("snapctl start simple-openvpn-client-ui.vpn-daemon")
+        os.system("snapctl stop simple-openvpn-client-gui.vpn-daemon")
+        os.system("snapctl start simple-openvpn-client-gui.vpn-daemon")
         info={}
         info=json.dumps(info)
         return Response(info, mimetype='json')
@@ -78,7 +78,7 @@ def conn():
 def disconn():              
   
     try:
-        os.system("snapctl stop simple-openvpn-client-ui.vpn-daemon")
+        os.system("snapctl stop simple-openvpn-client-gui.vpn-daemon")
         info={}
         info=json.dumps(info)
         return Response(info, mimetype='json')
@@ -92,7 +92,7 @@ def disconn():
 @app.route('/stream')
 def stream():
     def generate():
-        with open('/run/snap.simple-openvpn-client-ui/vpnlogs.log') as f:
+        with open('/run/snap.simple-openvpn-client-gui/vpnlogs.log') as f:
             while True:
                 yield f.read()
                 time.sleep(5)

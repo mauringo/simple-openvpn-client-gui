@@ -1,4 +1,4 @@
-name: simple-openvpn-client-ui
+name: simple-openvpn-client-gui
 version: '1.0.1'
 base: core22
 summary: Just a simple OPENVPN client # 79 char long summary
