@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+
+
+mkdir -p /run/snap.simple-openvpn-client-ui
+rm -f /run/snap.simple-openvpn-client-ui/vpnlogs.log
+$SNAP/usr/sbin/openvpn  --config $SNAP_COMMON/client.ovpn --log-append /run/snap.simple-openvpn-client-ui/vpnlogs.log
+
+
+#https://stackoverflow.com/questions/35540885/display-the-contents-of-a-log-file-as-it-is-updated

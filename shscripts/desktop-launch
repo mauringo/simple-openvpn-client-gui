@@ -1,0 +1,3 @@
+#!/bin/sh
+#cpu-monitoring-webapp.flask-server
+xdg-open http://localhost:13131

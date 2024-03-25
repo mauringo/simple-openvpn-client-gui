@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="mauringo"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simple VPN Client</title>
+    <!-- Import favicon -->
+    <link rel="icon" href="./assets/icon.png"/>
+    <!-- Import stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <!-- Import library scripts -->
+    <script src="./libs/jquery-3.4.1.min.js"></script>
+
+    <script src="./libs/popper.min.js"></script>
+    <script src="./libs/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/plotly-2.3.1.min.js"></script>
+    <link href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css" rel="stylesheet">
+
+    
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="#">VPN Client Manager</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+  </nav>
+  <body onload="populate()">
+        
+    <div class="container-fluid vertical-spacing ">
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 text-center vertical-spacing">
+          
+          <h1>Simple Openvpn Client</h1>
+        
+          
+          
+       
+        </div>
+        <div class="col-2">
+          
+          
+       
+        </div>
+      </div>
+    </div>
+   
+    <div class="container-fluid vertical-spacing ">
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+          
+          <h3>IP Info</h3>
+          <span class="badge badge-primary"id="IP">Public IP: </span>
+          <span class="badge badge-danger"id="City">City: </span>
+          <span class="badge badge-secondary"id="Region">Region: </span>
+          <span class="badge badge-success"id="Country">Country: </span>
+          
+          
+       
+        </div>
+        <div class="col-2">
+          
+          
+       
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-3 bg-light vertical-spacing">
+      <div class="col-md-12 text-center">
+      
+       
+            <button type="button" class="btn btn-primary" onclick=populate() >Update Values</button>
+        </div>
+      </div>
+       
+    <div class="container-fluid ">
+      <div class="row vertical-spacing ">
+        <div class="col-2"></div>
+        <div class="col-8">
+          <h3>Manage Connection</h3>
+
+            <div class="col-md-12 text-center">
+               
+                  
+              
+                  <button type="button" class="btn btn-success" onclick=connect()>Connect VPN</button>
+                  <button type="button" class="btn btn-danger" onclick=disconnect()>Disconnect VPN</button>
+               
+               
+                
+              </div>
+   
+        
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </div>
+
+    <div class="container-fluid ">
+      <div class="row vertical-spacing ">
+        <div class="col-2"></div>
+        <div class="col-8">
+          <h3>VPN Logs</h3>
+
+            <div class="col-md-12 text-center">
+               
+              <form>
+                
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Updated any 5s</label>
+                  <textarea class="form-control" id="outcode" rows="30" readonly></textarea>
+                </div>
+              </form>
+              
+           
+              <script>
+                  document.getElementById('outcode').value ="Logs will be displayed here";
+                  var output = document.getElementById('output');
+              
+                  var xhr = new XMLHttpRequest();
+                  xhr.open('GET', '/stream');
+                  xhr.send();
+              
+                  setInterval(function() {
+                     document.getElementById('outcode').value = xhr.responseText;
+                  }, 5000);
+              </script>
+               
+               
+                
+              </div>
+   
+        
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </div>
+
+    
+
+
+
+
+
+
+  <div class="container my-3 bg-light vertical-spacing">
+    <div class="col-md-12 text-center">
+      <h3>Bored? Play a Game!</h3>
+    </div>
+</div>
+<div class="container my-3 bg-light vertical-spacing">
+  <div class="col-md-12 text-center">
+     
+        
+        <a class="btn btn-success" href="./games/snake/index.html" target="_blank">Snake</a>
+        <a class="btn btn-danger" href="./games/gba/index.html" target="_blank">Game Boy Advance</a>
+        <a class="btn btn-primary" href="./games/spaceinvaders/index.html" target="_blank">Space Invaders</a>
+        
+     
+     
+     
+      
+    </div>
+  </div>
+
+  </body>
+  <!-- Site footer -->
+ <!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3 vertical-double-spacing">2024 - 
+    <a href="https://github.com/mauringo/CPU-monitoring-webAPP"> GitHub</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+</html>
+
+<

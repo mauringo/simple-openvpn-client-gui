@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=VPN Manager
+Comment=Manage you vpn connection
+Exec=simple-openvpn-client-ui.desktop-launch
+Icon=${SNAP}/meta/gui/icon.png
+Terminal=true
+Categories=Connectivity;
