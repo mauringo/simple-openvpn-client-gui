@@ -5,7 +5,7 @@ Place your OVPN certificate in the "/var/snap/simple-openvpn-client/common/" fol
 named "client.ovpn" then restart the app. The device will be connected at boot
 the command is:
 
-    sudo cp yourfile.ovpn  /var/snap/simple-openvpn-client/common/client.ovpn
+    sudo cp yourfile.ovpn  /var/snap/simple-openvpn-client-gui/common/client.ovpn
 
 # The app needs to have the right interfaces
 
@@ -15,8 +15,8 @@ The command to connect an interface is:
 
 So basically:
 
-            sudo snap connect simple-openvpn-client:network-control
-            sudo snap connect simple-openvpn-client:firewall-control
+            sudo snap connect simple-openvpn-client-gui:network-control
+            sudo snap connect simple-openvpn-client-gui:firewall-control
 
 The apps starts at boot and connects the VPN server automatically. 
 
