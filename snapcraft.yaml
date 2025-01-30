@@ -1,5 +1,6 @@
 name: simple-openvpn-client-gui
 base: core22
+version: 1.0.2
 summary: Just a simple OPENVPN client # 79 char long summary
 description: |
   like https://snapcraft.io/simple-openvpn-client but with a gui available on http://loalhost:13131
